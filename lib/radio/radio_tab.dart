@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class RadioContent extends StatelessWidget {
+class RadioTab extends StatelessWidget {
   
 
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HadethContent extends StatelessWidget {
+class HadethTab extends StatelessWidget {
   
 
   @override

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/hadeth/hadeth_content.dart';
-import 'package:islami_app/quran/quran_content.dart';
-import 'package:islami_app/radio/radio_content.dart';
-import 'package:islami_app/sebha/sebha_content.dart';
-import 'package:islami_app/settings/settings_content.dart';
+import 'package:islami_app/hadeth/hadeth_tab.dart';
+import 'package:islami_app/quran/quran_content_screen.dart';
+import 'package:islami_app/quran/quran_tab.dart';
+import 'package:islami_app/radio/radio_tab.dart';
+import 'package:islami_app/sebha/sebha_tab.dart';
+import 'package:islami_app/settings/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
 static const String routeName='/home';
@@ -15,11 +16,11 @@ static const String routeName='/home';
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabes=[
-    QuranContent(),
-    HadethContent(),
-    RadioContent(),
-    SebhaContent(),
-    SettingsContent(),
+    QuranTab(),
+    HadethTab(),
+    RadioTab(),
+    SebhaTab(),
+    SettingsTab(),
   ];
   int currentIndex=0;
   @override

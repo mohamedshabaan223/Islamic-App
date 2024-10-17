@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/quran/quran_content_screen.dart';
 
-class QuranContent extends StatelessWidget {
+class QuranTab extends StatelessWidget {
   List<String> suraName=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
     ,"يوسف","الرعد","إبراهيم","الحجر","النحل","الإسراء","الكهف","مريم","طه","الأنبياء","الحج","المؤمنون"
     ,"النّور","الفرقان","الشعراء","النّمل","القصص","العنكبوت","الرّوم","لقمان","السجدة","الأحزاب","سبأ"
@@ -29,9 +30,15 @@ class QuranContent extends StatelessWidget {
           Divider(),
           Expanded(child: 
           ListView.separated(itemBuilder:(context,index)=>
-          Text(suraName[index],
-          style: Theme.of(context).textTheme.headlineLarge,
-          textAlign: TextAlign.center,
+          InkWell(
+            onTap: (){
+              Navigator.of(context).pushNamed(QuranContentScreen.routeName,
+              arguments: SuraContent(name: suraName[index], index: index));
+            },
+            child: Text(suraName[index],
+            style: Theme.of(context).textTheme.headlineLarge,
+            textAlign: TextAlign.center,
+            ),
           ),
           itemCount: suraName.length,
           separatorBuilder:(context, index) =>SizedBox(height: 10,),
@@ -40,3 +47,8 @@ class QuranContent extends StatelessWidget {
         ],),
       ));
 }}
+class SuraContent{
+  String name;
+  int index;
+  SuraContent({required this.name , required this.index});
+}

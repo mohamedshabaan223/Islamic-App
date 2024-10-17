@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SettingsContent extends StatelessWidget {
+class SettingsTab extends StatelessWidget {
   
 
   @override

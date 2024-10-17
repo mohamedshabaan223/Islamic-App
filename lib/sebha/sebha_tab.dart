@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SebhaContent extends StatelessWidget {
+class SebhaTab extends StatelessWidget {
   
 
   @override
