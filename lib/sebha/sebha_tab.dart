@@ -55,7 +55,7 @@ class _SebhaTabState extends State<SebhaTab> {
              Text('عدد التسبيحات',
              style: Theme.of(context).textTheme.headlineLarge,
              ),
-             SizedBox(height: height *0.03,),
+             SizedBox(height: height *0.031,),
              Container(
               padding: EdgeInsets.symmetric(horizontal: 20 , vertical: 10),
               decoration: BoxDecoration(
