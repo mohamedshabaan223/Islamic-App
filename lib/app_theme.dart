@@ -10,6 +10,7 @@ class AppTheme {
     primaryColor: primayLight,
      appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
+      foregroundColor: black,
       centerTitle: true,
       titleTextStyle: TextStyle(fontSize: 30,
       fontWeight: FontWeight.bold,
@@ -47,5 +48,43 @@ class AppTheme {
   
   static ThemeData darkMode = ThemeData(
     primaryColor: primayDark,
+     appBarTheme: AppBarTheme(
+      foregroundColor: white,
+      backgroundColor: Colors.transparent,
+      centerTitle: true,
+      titleTextStyle: TextStyle(fontSize: 30,
+      fontWeight: FontWeight.bold,
+      color:white,
+      ),
+    ),
+    textTheme: TextTheme(
+      headlineLarge: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w600,
+        color: white,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: gold,
+      )
+    ),
+    dividerTheme: DividerThemeData(
+      color: gold,
+      thickness: 2.5,
+      
+    ),
+    scaffoldBackgroundColor: Colors.transparent,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: primayDark,
+      selectedItemColor:gold,
+      unselectedItemColor: white,
+
+    )
+    
+    
   );
+  
+  
 }

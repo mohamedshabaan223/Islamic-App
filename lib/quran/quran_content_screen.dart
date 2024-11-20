@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/app_theme.dart';
 import 'package:islami_app/loading_circular.dart';
 import 'package:islami_app/quran/quran_tab.dart';
+import 'package:islami_app/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranContentScreen extends StatefulWidget {
  static const String routeName='/sura-content';
@@ -17,12 +19,13 @@ class _QuranContentScreenState extends State<QuranContentScreen> {
   late SuraContent sura;
 
   Widget build(BuildContext context) {
+    SettingProvider settingProvider = Provider.of<SettingProvider>(context);
  sura =ModalRoute.of(context)!.settings.arguments as SuraContent ;
   if(suraList.isEmpty) loadSuraFile();
  return Container(
       decoration: BoxDecoration(
         image: DecorationImage(image: 
-       AssetImage('assets/images/bg3.png'),
+       AssetImage('assets/images/${settingProvider.backgroundImage}.png'),
        fit: BoxFit.fill)
       ),
       child: Scaffold(
@@ -31,10 +34,11 @@ class _QuranContentScreenState extends State<QuranContentScreen> {
           style: Theme.of(context).textTheme.headlineLarge,
           textAlign: TextAlign.center,
         ),),
-        body: Container(margin: EdgeInsets.symmetric(horizontal: 25,
+        body: Container(
+          margin: EdgeInsets.symmetric(horizontal: 25,
          vertical:MediaQuery.sizeOf(context).height* 0.07 ),
         decoration: BoxDecoration(
-          color: AppTheme.white,
+          color: settingProvider.isDark ? AppTheme.primayDark : AppTheme.white,
           borderRadius: BorderRadius.circular(25),
         ),
       child:  Column(

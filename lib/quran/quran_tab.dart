@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/quran/quran_content_screen.dart';
+import 'package:islami_app/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraName=["الفاتحه","البقرة","آل عمران","النساء","المائدة","الأنعام","الأعراف","الأنفال","التوبة","يونس","هود"
@@ -16,12 +18,7 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/bg3.png'),
-        fit: BoxFit.fill)
-      ),
-      child: Scaffold(
+    return  Scaffold(
         body: Column(children: [
           Image.asset('assets/images/quran_header_icn.png'),
           Divider(),
@@ -45,7 +42,7 @@ class QuranTab extends StatelessWidget {
           ),
           )
         ],),
-      ));
+      );
 }}
 class SuraContent{
   String name;

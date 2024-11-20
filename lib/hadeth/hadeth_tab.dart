@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:islami_app/hadeth/hadeth_class.dart';
 import 'package:islami_app/hadeth/hadeth_content_screen.dart';
 import 'package:islami_app/loading_circular.dart';
+import 'package:islami_app/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -15,9 +17,9 @@ class _HadethTabState extends State<HadethTab> {
   @override
   Widget build(BuildContext context) {
     loadingHadethFile();
-    return Container(
-      decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/images/bg3.png'))),
-      child: Scaffold(body: Column(children: [
+    return 
+    
+     Scaffold(body: Column(children: [
         Padding(
           padding: const EdgeInsets.all(30.0),
           child: Image.asset('assets/images/hadith_header.png'),
@@ -38,7 +40,7 @@ class _HadethTabState extends State<HadethTab> {
          ),itemCount: ahadeth.length,
          separatorBuilder: (context , index) => SizedBox(height: 10,),
          ))
-      ],),));
+      ],),);
   }
 
   Future<void> loadingHadethFile() async {
